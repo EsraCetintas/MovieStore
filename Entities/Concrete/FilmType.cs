@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-  public class Type:IEntity
+  public class FilmType:IEntity
     {
         public int TypeId { get; set; }
         public string TypeName { get; set; }

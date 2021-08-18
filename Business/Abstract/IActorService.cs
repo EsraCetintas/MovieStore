@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace Business.Abstract
 {
    public interface IActorService
     {
-        List<Actor> GetAll();
-        Actor GetById(int id);
-        void Add(Actor actor);
-        void Delete(Actor actor);
-        void Update(Actor actor);
+        IDataResult<List<Actor>> GetAll();
+        IDataResult<Actor> GetById(int id);
+        IResult Add(Actor actor);
+        IResult Delete(Actor actor);
+        IResult Update(Actor actor);
     }
 }

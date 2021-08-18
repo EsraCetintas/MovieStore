@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -12,35 +13,37 @@ namespace Business.Concrete
     public class ActorManager : IActorService
     {
         IActorDal _actorDal;
-
         public ActorManager(IActorDal actorDal)
         {
             _actorDal = actorDal;
         }
 
-        public void Add(Actor actor)
+        public IResult Add(Actor actor)
         {
             _actorDal.Add(actor);
+            return new SuccessResult();
         }
 
-        public void Delete(Actor actor)
+        public IResult Delete(Actor actor)
         {
             _actorDal.Delete(actor);
+            return new SuccessResult();
         }
 
-        public List<Actor> GetAll()
+        public IDataResult<List<Actor>> GetAll()
         {
-            return _actorDal.GetAll();
+            return new  SuccessDataResult<List<Actor>>( _actorDal.GetAll());
         }
 
-        public Actor GetById(int id)
+        public IDataResult<Actor> GetById(int id)
         {
-            return _actorDal.GetById(a => a.ActorId == id);
+            return new SuccessDataResult<Actor>(_actorDal.GetById(a => a.ActorId == id));
         }
 
-        public void Update(Actor actor)
+        public IResult Update(Actor actor)
         {
             _actorDal.Update(actor);
+            return new SuccessResult();
         }
     }
 }

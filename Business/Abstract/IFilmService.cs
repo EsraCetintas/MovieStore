@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace Business.Abstract
         void Add(Film film);
         void Delete(Film film);
         void Update(Film film);
+        List<FilmDetailDto> GetFilmDetails();
     }
 }

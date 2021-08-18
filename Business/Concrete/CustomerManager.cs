@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -18,12 +19,12 @@ namespace Business.Concrete
             _customerDal = customerDal;
         }
 
-        public void Add(Customer customer)
+        public IResult Add(Customer customer)
         {
             _customerDal.Add(customer);
         }
 
-        public void Delete(Customer customer)
+        public IResult Delete(Customer customer)
         {
             _customerDal.Delete(customer);
         }
@@ -38,7 +39,7 @@ namespace Business.Concrete
             return _customerDal.GetById(c => c.CustomerId == id);
         }
 
-        public void Update(Customer customer)
+        public IResult Update(Customer customer)
         {
             _customerDal.Update(customer);
         }
