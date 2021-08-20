@@ -4,49 +4,50 @@ Proje Yapısı
 
 1.Bir filmin sahip olması gereken özellikleri şu şekildedir:
 <ul>
-  <li>-Film Adı</li>
+  <li>Film Adı</li>
 
-<li>-Film Yılı</li>
+<li>Film Yılı</li>
 
-<li>-Film Türü</li>
+<li>Film Türü</li>
 
-  <li>-Yönetmen</li>
+  <li>Yönetmen</li>
 
-  <li>-Oyuncular</li>
+  <li>Oyuncular</li>
 
-  <li>-Fiyat</li>
+  <li>Fiyat</li>
+  </ul>
 
 Yönetmenler ve oyuncular ayrı tutulmalıdır. Bir oyuncu aynı zamanda yönetmen de olabilir, ama bunlar iki ayrı yapıdır.
 
 
 2.Oyuncuların sahip olması gereken özellikler temelde şu şekildedir :
+<ul>
+  <li>İsim</li>
 
--İsim
+  <li>Soyisim</li>
 
--Soyisim
-
--Oynadığı filmler
+<li>Oynadığı filmler</li>
+  </ul>
 
 Bir filmde birden fazla oyuncu oynayabilir, bir oyuncunun da birden fazla filmi olabilir.
 
 
 3.Yönetmenlerin sahip olması gereken özellikler temelde şu şekildedir:
+<ul>
+  <li>İsim</li>
 
--İsim
+  <li>Soyisim</li>
 
--Soyisim
-
--Yönettiği filmler
+  <li>Yönettiği filmler</li>
 
 4.Uygulama içerisinde bir de Customer rolü olmalıdır. Özellikleri ise temelde şu şekildedir:
 
--İsim
+  <li>İsim</li>
+  <li>Soyisim</li>
 
--Soyisim
+  <li>Satın aldığı filmler</li>
 
--Satın aldığı filmler
-
--Favori türler
+  <li>Favori türler</li>
 
 Müşterinin birden fazla favori film türü olabilir. Satın aldığı bir türü tekrar satın alabilir. Buraya bir kısıtlama koymaya gerek yok.
 
@@ -56,13 +57,12 @@ Müşterinin birden fazla favori film türü olabilir. Satın aldığı bir tür
 
 6.Müşterilerin satın aldıkları filmler siparişlerim gibi bir yapı içerisinde tutulmalıdır. Temel özellikleri ise şu şekilde olmalıdır:
 
--Satın alan müşteri
+  <li>Satın alan müşteri</li>
 
--Satın alınan film
+  <li>Satın alınan film</li>
+  <li>Fiyat</li>
 
--Fiyat
-
--Satın alma tarihi
+  <li>Satın alma tarihi</li>
 
 
 <h3>Uygulama Gereksinimleri</h3>
