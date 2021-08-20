@@ -3,18 +3,18 @@ Proje Yapısı
 
 
 1.Bir filmin sahip olması gereken özellikleri şu şekildedir:
+<ul>
+  <li>-Film Adı</li>
 
--Film Adı
+<li>-Film Yılı</li>
 
--Film Yılı
+<li>-Film Türü</li>
 
--Film Türü
+  <li>-Yönetmen</li>
 
--Yönetmen
+  <li>-Oyuncular</li>
 
--Oyuncular
-
--Fiyat
+  <li>-Fiyat</li>
 
 Yönetmenler ve oyuncular ayrı tutulmalıdır. Bir oyuncu aynı zamanda yönetmen de olabilir, ama bunlar iki ayrı yapıdır.
 
@@ -65,7 +65,7 @@ Müşterinin birden fazla favori film türü olabilir. Satın aldığı bir tür
 -Satın alma tarihi
 
 
-<h3 class="text-primary">Uygulama Gereksinimleri</h3>
+<h3>Uygulama Gereksinimleri</h3>
 
 
 1.Film Ekleme/Silme/Güncelleme/Listeleme
