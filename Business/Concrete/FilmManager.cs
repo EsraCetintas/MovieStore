@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -19,34 +20,37 @@ namespace Business.Concrete
             _filmDal = filmDal;
         }
 
-        public void Add(Film film)
+        public IResult Add(Film film)
         {
             _filmDal.Add(film);
+            return new SuccessResult();
         }
 
-        public void Delete(Film film)
+        public IResult Delete(Film film)
         {
             _filmDal.Delete(film);
+            return new SuccessResult();
         }
 
-        public List<Film> GetAll()
+        public IDataResult<List<Film>> GetAll()
         {
-            return _filmDal.GetAll();
+            return new SuccessDataResult<List<Film>>(_filmDal.GetAll());
         }
 
-        public Film GetById(int id)
+        public IDataResult<Film> GetById(int id)
         {
-            return _filmDal.GetById(f => f.DirectorId == id);
+            return new SuccessDataResult<Film>(_filmDal.GetById(f => f.DirectorId == id));
         }
 
-        public List<FilmDetailDto> GetFilmDetails()
+        public IDataResult<List<FilmDetailDto>> GetFilmDetails()
         {
-            return _filmDal.GetFilmDetails();
+            return new SuccessDataResult<List<FilmDetailDto>>(_filmDal.GetFilmDetails());
         }
 
-        public void Update(Film film)
+        public IResult Update(Film film)
         {
             _filmDal.Update(film);
+            return new SuccessResult();
         }
     }
 }
