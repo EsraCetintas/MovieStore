@@ -65,7 +65,7 @@ Müşterinin birden fazla favori film türü olabilir. Satın aldığı bir tür
 -Satın alma tarihi
 
 
-Uygulama Gereksinimleri
+<h3>Uygulama Gereksinimleri</h3>
 
 
 1.Film Ekleme/Silme/Güncelleme/Listeleme
