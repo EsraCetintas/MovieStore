@@ -39,15 +39,17 @@ Bir filmde birden fazla oyuncu oynayabilir, bir oyuncunun da birden fazla filmi 
   <li>Soyisim</li>
 
   <li>Yönettiği filmler</li>
+  </ul>
 
 4.Uygulama içerisinde bir de Customer rolü olmalıdır. Özellikleri ise temelde şu şekildedir:
-
+<ul>
   <li>İsim</li>
   <li>Soyisim</li>
 
   <li>Satın aldığı filmler</li>
 
   <li>Favori türler</li>
+  </ul>
 
 Müşterinin birden fazla favori film türü olabilir. Satın aldığı bir türü tekrar satın alabilir. Buraya bir kısıtlama koymaya gerek yok.
 
@@ -56,14 +58,14 @@ Müşterinin birden fazla favori film türü olabilir. Satın aldığı bir tür
 
 
 6.Müşterilerin satın aldıkları filmler siparişlerim gibi bir yapı içerisinde tutulmalıdır. Temel özellikleri ise şu şekilde olmalıdır:
-
+<ul>
   <li>Satın alan müşteri</li>
 
   <li>Satın alınan film</li>
   <li>Fiyat</li>
 
   <li>Satın alma tarihi</li>
-
+</ul>
 
 <h3>Uygulama Gereksinimleri</h3>
 
@@ -101,7 +103,7 @@ Müşteri istediği bir filmi uygulama üzerinden satın alabilir.
 
 
 
-Teknik Gereksinimler
+<h3>Teknik Gereksinimler</h3>
 
 
 1.Entity objeleri input/output olarak kullanılmamalı.
