@@ -19,8 +19,8 @@ namespace DataAccess.Concrete.EntityFramework
             using(MovieStoreContext context=new MovieStoreContext())
             {
                 var result = from p in context.Films
-                             join t in context.Types
-                             on p.FilmTypeId equals t.TypeId
+                             join t in context.FilmTypes
+                             on p.FilmTypeId equals t.FilmTypeId
                              join d in context.Directors
                              on p.DirectorId equals d.DirectorId
                              select new FilmDetailDto
