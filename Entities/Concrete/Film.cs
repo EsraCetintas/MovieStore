@@ -11,9 +11,9 @@ namespace Entities.Concrete
     {
         public int FilmId { get; set; }
         public int DirectorId { get; set; }
+        public int FilmTypeId { get; set; }
         public string FilmName { get; set; }
         public int FilmYear { get; set; }
-        public int FilmTypeId { get; set; }
         public decimal Price { get; set; }
         public bool DirectorType { get; set; }
     }

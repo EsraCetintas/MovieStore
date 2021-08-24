@@ -11,19 +11,19 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ActorsController : ControllerBase
+    public class FilmTypesController : ControllerBase
     {
-        IActorService _actorService;
+        IFilmTypeService _filmTypeService;
 
-        public ActorsController(IActorService actorService)
+        public FilmTypesController(IFilmTypeService filmTypeService)
         {
-            _actorService = actorService;
+            _filmTypeService = filmTypeService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _actorService.GetAll();
+            var result = _filmTypeService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -34,7 +34,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _actorService.GetById(id);
+            var result = _filmTypeService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -43,10 +43,10 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Actor actor)
+        public IActionResult Add(FilmType filmType)
         {
-            var result = _actorService.Add(actor);
-            if(result.Success)
+            var result = _filmTypeService.Add(filmType);
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -54,9 +54,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(Actor actor)
+        public IActionResult Delete(FilmType filmType)
         {
-            var result = _actorService.Delete(actor);
+            var result = _filmTypeService.Delete(filmType);
             if (result.Success)
             {
                 return Ok(result);
@@ -65,16 +65,14 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(Actor actor)
+        public IActionResult Update(FilmType filmType)
         {
-            var result = _actorService.Update(actor);
+            var result = _filmTypeService.Update(filmType);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
-
-
     }
 }

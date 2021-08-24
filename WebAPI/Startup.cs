@@ -42,6 +42,8 @@ namespace WebAPI
             services.AddSingleton<ICustomerDal, EfCustomerDal>();
             services.AddSingleton<IOrderService, OrderManager>();
             services.AddSingleton<IOrderDal, EfOrderDal>();
+            services.AddSingleton<IFilmTypeService, FilmTypeManager>();
+            services.AddSingleton<IFilmTypeDal, EfFilmTypeDal>();
 
             services.AddSwaggerGen(c =>
             {

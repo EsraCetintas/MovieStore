@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,6 +25,51 @@ namespace WebAPI.Controllers
         {
             var result = _filmService.GetAll();
             if(result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int id)
+        {
+            var result = _filmService.GetById(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("add")]
+        public IActionResult Add(Film film)
+        {
+            var result = _filmService.Add(film);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("delete")]
+        public IActionResult delete(Film film)
+        {
+            var result = _filmService.Delete(film);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("delete")]
+        public IActionResult Update(Film film)
+        {
+            var result = _filmService.Update(film);
+            if (result.Success)
             {
                 return Ok(result);
             }
