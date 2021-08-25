@@ -32,18 +32,18 @@ namespace WebAPI
         {
 
             services.AddControllers();
-            services.AddSingleton<IFilmService,FilmManager>();
-            services.AddSingleton<IFilmDal, EfFilmDal>();
-            services.AddSingleton<IActorService,ActorManager>();
-            services.AddSingleton<IActorDal, EfActorDal>();
-            services.AddSingleton<IDirectorService, DirectorManager>();
-            services.AddSingleton<IDirectorDal, EfDirectorDal>();
-            services.AddSingleton<ICustomerService, CustomerManager>();
-            services.AddSingleton<ICustomerDal, EfCustomerDal>();
-            services.AddSingleton<IOrderService, OrderManager>();
-            services.AddSingleton<IOrderDal, EfOrderDal>();
-            services.AddSingleton<IFilmTypeService, FilmTypeManager>();
-            services.AddSingleton<IFilmTypeDal, EfFilmTypeDal>();
+            //services.AddSingleton<IFilmService,FilmManager>();
+            //services.AddSingleton<IFilmDal, EfFilmDal>();
+            //services.AddSingleton<IActorService,ActorManager>();
+            //services.AddSingleton<IActorDal, EfActorDal>();
+            //services.AddSingleton<IDirectorService, DirectorManager>();
+            //services.AddSingleton<IDirectorDal, EfDirectorDal>();
+            //services.AddSingleton<ICustomerService, CustomerManager>();
+            //services.AddSingleton<ICustomerDal, EfCustomerDal>();
+            //services.AddSingleton<IOrderService, OrderManager>();
+            //services.AddSingleton<IOrderDal, EfOrderDal>();
+            //services.AddSingleton<IFilmTypeService, FilmTypeManager>();
+            //services.AddSingleton<IFilmTypeDal, EfFilmTypeDal>();
 
             services.AddSwaggerGen(c =>
             {
