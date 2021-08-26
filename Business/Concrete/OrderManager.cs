@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -19,6 +21,7 @@ namespace Business.Concrete
             _orderDal = orderDal;
         }
 
+        [ValidationAspect(typeof(OrderValidator))]
         public IResult Add(Order order)
         {
             _orderDal.Add(order);
@@ -41,6 +44,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Order>(_orderDal.GetById(o => o.OrderId == id));
         }
 
+        [ValidationAspect(typeof(OrderValidator))]
         public IResult Update(Order order)
         {
             _orderDal.Update(order);

@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -20,6 +22,7 @@ namespace Business.Concrete
             _filmDal = filmDal;
         }
 
+        [ValidationAspect(typeof(FilmValidator))]
         public IResult Add(Film film)
         {
             _filmDal.Add(film);
@@ -47,6 +50,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<FilmDetailDto>>(_filmDal.GetFilmDetails());
         }
 
+        [ValidationAspect(typeof(FilmValidator))]
         public IResult Update(Film film)
         {
             _filmDal.Update(film);

@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -19,6 +21,7 @@ namespace Business.Concrete
             _directorDal = directorDal;
         }
 
+        [ValidationAspect(typeof(DirectorValidator))]
         public IResult Add(Director director)
         {
             _directorDal.Add(director);
@@ -41,6 +44,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Director>(_directorDal.GetById(d => d.DirectorId == id));
         }
 
+        [ValidationAspect(typeof(DirectorValidator))]
         public IResult Update(Director director)
         {
             _directorDal.Update(director);

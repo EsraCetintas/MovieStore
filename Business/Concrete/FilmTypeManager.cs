@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -19,6 +21,7 @@ namespace Business.Concrete
             _filmTypeDal = filmTypeDal;
         }
 
+        [ValidationAspect(typeof(FilmTypeValidator))]
         public IResult Add(FilmType filmType)
         {
             _filmTypeDal.Add(filmType);
@@ -41,6 +44,7 @@ namespace Business.Concrete
             return new SuccessDataResult<FilmType>(_filmTypeDal.GetById(f=>f.FilmTypeId==id));
         }
 
+        [ValidationAspect(typeof(FilmTypeValidator))]
         public IResult Update(FilmType filmType)
         {
             _filmTypeDal.Update(filmType);
