@@ -14,6 +14,7 @@ namespace Business.ValidationRules.FluentValidation
         {
             RuleFor(d => d.DirectorName).NotEmpty();
             RuleFor(d => d.DirectorSurname).NotEmpty();
+            RuleFor(d => d.DirectorType).NotEmpty();
         }
     }
 }

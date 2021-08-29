@@ -1,6 +1,8 @@
 ﻿using Business.Abstract;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
+using Core.Business;
+using Core.Entities;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -15,10 +17,12 @@ namespace Business.Concrete
     public class DirectorManager : IDirectorService
     {
         IDirectorDal _directorDal;
+        IActorService _actorService;
 
-        public DirectorManager(IDirectorDal directorDal)
+        public DirectorManager(IDirectorDal directorDal, IActorService actorService)
         {
             _directorDal = directorDal;
+            _actorService = actorService;
         }
 
         [ValidationAspect(typeof(DirectorValidator))]
@@ -50,5 +54,6 @@ namespace Business.Concrete
             _directorDal.Update(director);
             return new SuccessResult();
         }
+
     }
 }

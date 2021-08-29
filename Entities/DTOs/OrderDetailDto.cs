@@ -5,15 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Concrete
+namespace Entities.DTOs
 {
-   public class Film:IEntity
+   public class OrderDetailDto:IDto
     {
         public int FilmId { get; set; }
-        public int DirectorId { get; set; }
-        public int FilmTypeId { get; set; }
+        public int CustomerId { get; set; }
         public string FilmName { get; set; }
-        public int FilmYear { get; set; }
+        public string CustomerName { get; set; }
+        public string CustomerSurname { get; set; }
+        public DateTime OrderDate { get; set; }
         public decimal Price { get; set; }
     }
 }

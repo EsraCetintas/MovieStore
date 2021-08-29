@@ -4,6 +4,7 @@ using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,11 @@ namespace Business.Concrete
         {
             _orderDal.Add(order);
             return new SuccessResult();
+        }
+
+        public IDataResult<List<OrderDetailDto>> CustomerOrders(int customerId)
+        {
+            return new SuccessDataResult<List<OrderDetailDto>>(_orderDal.GetOrderDetails(o=>o.CustomerId==customerId));
         }
 
         public IResult Delete(Order order)
