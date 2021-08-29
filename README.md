@@ -121,28 +121,13 @@ Müşteri istediği bir filmi uygulama üzerinden satın alabilir.
 4.Her servisin bir validation sınıfı olmalıdır. Uygulama sıkı kurallar ile korunmalı, olası tüm validasyonlar yazılmalıdır.
 
 
-
-5.Exception ve loglama altyapısı middleware kullanılarak yazılmalıdır.
-
-
-
-Uygulama yapılan her request ve response console'a yazılarak loglanmalıdır.
-Uygulama hata aldığında yada validayon hatası fırlattığında anlamlı bir şekilde bu hatalar console'a log olarak yazdırılmalıdır.
-Loglama yöntemi uygulama içerisine yayılmamalıdır. Gerek duyulduğunda sadece bir noktada değişiklik yaparak loglama şekli değiştirilebilmeli.
-
-
-6.Proje içerisinde bağımlılık (dependency) yaratılmamasına dikkat edilmelidir. Gerekli noktalarda DI Container ile Dependency Injection kullanılarak bağımlılıklar tek bir noktadan yönetilmelidir.
+5.Proje içerisinde bağımlılık (dependency) yaratılmamasına dikkat edilmelidir. Gerekli noktalarda DI Container ile Dependency Injection kullanılarak bağımlılıklar tek bir noktadan yönetilmelidir.
 
 
 
 7.Projeye temel seviyede bir Authentication ve Authorization yapısı implemente edilmelidir. Satın alma endpoint'i sadece müşteri tarafından kullanılacak bir endpoint olmalıdır.
 
 
-
-8.Projenin birim testleri eksiksiz şekilde yazılmalıdır. Tüm testler hatasız çalışmalıdır.
-
-
-
-9.Silme servislerinde veri tutarlılığı dikkate alınmalıdır. Diğer tablolarda ilişkili datası bulunan kayıtlar silinemez.
+8.Silme servislerinde veri tutarlılığı dikkate alınmalıdır. Diğer tablolarda ilişkili datası bulunan kayıtlar silinemez.
 
 
