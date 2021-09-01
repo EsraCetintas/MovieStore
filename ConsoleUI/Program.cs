@@ -52,7 +52,7 @@ namespace ConsoleUI
 
         private static void FilmDeleteTest(FilmManager manager)
         {
-            manager.Delete(new Film { FilmId = 1, DirectorId = 1, FilmTypeId = 6, FilmName = "Inception", FilmYear = 2010, Price = 18, DirectorType = false });
+            manager.Delete(new Film { FilmId = 1, DirectorId = 1, FilmTypeId = 6, FilmName = "Inception", FilmYear = 2010, Price = 18});
         }
 
         private static void FilmGetAllTest(FilmManager manager)

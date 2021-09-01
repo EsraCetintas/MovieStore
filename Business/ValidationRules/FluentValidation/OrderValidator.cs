@@ -10,7 +10,7 @@ namespace Business.ValidationRules.FluentValidation
 {
    public class OrderValidator: AbstractValidator<Order>
     {
-        public OrderValiadator()
+        public OrderValidator()
         {
             RuleFor(o=>o.CustomerId).GreaterThan(0);
             RuleFor(o=>o.FilmId).GreaterThan(0);
