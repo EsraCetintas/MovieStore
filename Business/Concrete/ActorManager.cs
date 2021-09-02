@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspect.Autofac;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
@@ -20,6 +21,7 @@ namespace Business.Concrete
             _actorDal = actorDal;
         }
 
+        [SecuredOperation("admin")]
         [ValidationAspect(typeof(ActorValidator))]
         public IResult Add(Actor actor)
         {
