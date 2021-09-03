@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspect.Autofac;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Validation;
 using Core.Business;
 using Core.Entities;
@@ -25,7 +27,9 @@ namespace Business.Concrete
             _actorService = actorService;
         }
 
+        [SecuredOperation("admin")]
         [ValidationAspect(typeof(DirectorValidator))]
+        [CacheRemoveAspect("IDirectorService.Get")]
         public IResult Add(Director director)
         {
             _directorDal.Add(director);
@@ -38,6 +42,7 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
+        [CacheAspect]
         public IDataResult<List<Director>> GetAll()
         {
             return new SuccessDataResult<List<Director>>(_directorDal.GetAll());
@@ -47,8 +52,9 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Director>(_directorDal.GetById(d => d.DirectorId == id));
         }
-
+        [SecuredOperation("admin")]
         [ValidationAspect(typeof(DirectorValidator))]
+        [CacheRemoveAspect("IDirectorService.Get")]
         public IResult Update(Director director)
         {
             _directorDal.Update(director);
